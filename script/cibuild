@@ -15,9 +15,11 @@ export RBENV_VERSION="1.9.3-p194"
 export RAILS_ENV="test"
 export PYTHONPATH="vendor/python:$PYTHONPATH"
 
+rm -rf vendor
+
 # bootstrap gem environment changes
 echo "Bootstrapping gem environment ..."
 
-script/bootstrap --local
+script/bootstrap
 
 rake
