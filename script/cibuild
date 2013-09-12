@@ -12,6 +12,9 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export PATH="/usr/share/rbenv/shims:$PATH"
 export RBENV_VERSION="1.9.3-p194"
 
+export RAILS_ENV="test"
+export PYTHONPATH="vendor/python:$PYTHONPATH"
+
 # bootstrap gem environment changes
 echo "Bootstrapping gem environment ..."
 

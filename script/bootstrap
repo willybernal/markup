@@ -4,5 +4,15 @@ set -e
 
 cd $(dirname "$0")/..
 
-bundle install
-easy_install docutils
+echo "==> Installing gem dependencies…"
+bundle check --path vendor/gems 2>&1 > /dev/null || {
+  bundle install --binstubs bin --path vendor/gems
+}
+
+mkdir -p vendor/python
+
+if [ "$RAILS_ENV" == "test" ]; then
+  easy_install --install-dir=vendor/python docutils
+else
+  easy_install docutils
+fi
